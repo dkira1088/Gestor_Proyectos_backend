@@ -1,0 +1,41 @@
+To run this proyect 
+
+npm i 
+npm run dev
+
+/*Instalación de express*/
+
+npm i express
+
+/*instalación de nodemon*/
+
+- esto es una dependencia de desarrollo para cuando haya un cambion en el archivo index.js el servidor se reinicie solo
+
+npm i -D nodemon
+
+/* para habilitar los imports en el archivo index.js*/
+
+se configura en el archivo package.json
+
+"type": "module"
+
+/* instal mongoose ORM*/
+
+npm i mongoose
+
+/* install dotenv*/
+esta herramienta es para configurar variables de entorno
+
+npm i dotenv
+
+/*Encriptar strings */
+
+npm i bcrypt
+
+/*JWT Json web token*/
+
+npm i jsonwebtoken
+
+/* Envio de correos */
+
+npm i nodemailer
