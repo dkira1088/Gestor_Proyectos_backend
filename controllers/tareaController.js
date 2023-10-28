@@ -97,6 +97,14 @@ const eliminarTarea = async (req, res) => {
   }
 };
 
+const obtenerTareas = async (req, res) => {
+  const tarea = await Tarea.find();
+  try {
+    res.json({ tarea });
+  } catch (error) {
+    console.log(error);
+  }
+};
 const cambiarEstadoTarea = async (req, res) => {};
 
 export {
@@ -105,4 +113,5 @@ export {
   actualizarTarea,
   eliminarTarea,
   cambiarEstadoTarea,
+  obtenerTareas,
 };
