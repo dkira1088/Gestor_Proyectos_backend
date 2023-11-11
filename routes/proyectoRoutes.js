@@ -26,7 +26,7 @@ proyectoRouter
 
 proyectoRouter.post("/colaboradores", checkAuth, buscarColaborador);
 proyectoRouter.post("/colaboradores/:id", checkAuth, agregarColaborador);
-proyectoRouter.delete(
+proyectoRouter.post(
   "/eliminar-colaborador/:id",
   checkAuth,
   eliminarColaborador
