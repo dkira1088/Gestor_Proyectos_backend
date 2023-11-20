@@ -66,7 +66,7 @@ const editarProyecto = async (req, res) => {
 
 const eliminarProyecto = async (req, res) => {
   const { id } = req.params;
-
+  
   const proyecto = await Proyecto.findById(id);
 
   if (!proyecto) {
@@ -81,7 +81,9 @@ const eliminarProyecto = async (req, res) => {
     await proyecto.deleteOne();
 
     res.json({ msg: "Proyecto Eliminado" });
-  } catch (error) {}
+  } catch (error) {
+
+  }
 };
 
 const buscarColaborador = async (req, res) => {
@@ -100,6 +102,8 @@ const buscarColaborador = async (req, res) => {
 
 const agregarColaborador = async (req, res) => {
   const proyecto = await Proyecto.findById(req.params.id);
+
+  console.log("",req.body);
   if (!proyecto) {
     const error = new Error("Proyecto no encontrado");
     return res.status(404).json({ msg: error.message });

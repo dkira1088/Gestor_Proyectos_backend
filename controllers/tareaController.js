@@ -2,8 +2,12 @@ import Proyecto from "../Models/Proyecto.js";
 import Tarea from "../Models/Tarea.js";
 
 const agregarTarea = async (req, res) => {
-  const { proyecto } = req.body;
+  const { proyecto, descripcion,
+    fechaEntrega,
+    nombre,
+    prioridad} = req.body;
 
+  console.log(proyecto)
   const existeProyecto = await Proyecto.findById(proyecto);
 
   if (!existeProyecto) {
@@ -17,7 +21,9 @@ const agregarTarea = async (req, res) => {
   }
 
   try {
-    const tareaAlmacenada = await Tarea.create(req.body);
+    
+    const tareaReq = {nombre, descripcion, fechaEntrega,prioridad, proyecto};
+    const tareaAlmacenada = await Tarea.create(tareaReq);
 
     existeProyecto.tareas.push(tareaAlmacenada._id);
 
